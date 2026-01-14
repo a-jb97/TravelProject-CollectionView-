@@ -45,7 +45,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return item
     }
     
-    // MARK: 아이템 선택 시 DomesticDetailVC로 값 전달 후 Push
+    // MARK: 아이템 선택 시 조건부로 각 DetailVC로 Push 또는 Present
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let domesticVC = storyboard?.instantiateViewController(withIdentifier: "DomesticDetailViewController") as! DomesticDetailViewController
         
@@ -56,9 +56,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             navigationController?.pushViewController(domesticVC, animated: true)
         } else {
-            internationalVC.itemData = citys[indexPath.row]
+            let navVC = UINavigationController(rootViewController: internationalVC)
             
-            navigationController?.pushViewController(internationalVC, animated: true)
+            internationalVC.itemData = citys[indexPath.row]
+            navVC.modalPresentationStyle = .fullScreen
+            
+            present(navVC, animated: true)
         }
     }
     
