@@ -51,7 +51,7 @@
             <connections>
                 <outlet property="cityExplainLabel" destination="hcX-TC-t9S" id="l8F-aO-UJu"/>
                 <outlet property="cityImageView" destination="iXa-zM-ZrU" id="4ak-c2-SEZ"/>
-                <outlet property="cityName" destination="OAM-OX-euw" id="AQz-Fp-rTv"/>
+                <outlet property="cityNameLabel" destination="OAM-OX-euw" id="AQz-Fp-rTv"/>
             </connections>
             <point key="canvasLocation" x="-148.09160305343511" y="91.549295774647888"/>
         </collectionViewCell>

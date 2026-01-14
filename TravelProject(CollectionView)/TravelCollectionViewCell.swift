@@ -12,7 +12,7 @@ class TravelCollectionViewCell: UICollectionViewCell {
     static let identifier = "TravelCollectionViewCell"
 
     @IBOutlet var cityImageView: UIImageView!
-    @IBOutlet var cityName: UILabel!
+    @IBOutlet var cityNameLabel: UILabel!
     @IBOutlet var cityExplainLabel: UILabel!
     
     private func configUI(row: City) {
@@ -21,7 +21,7 @@ class TravelCollectionViewCell: UICollectionViewCell {
         cityImageView.layer.cornerRadius = cityImageView.frame.height / 2
         cityImageView.kf.setImage(with: URL(string: url))
         
-        cityName.text = "\(row.city_name) | \(row.city_english_name)"
+        cityNameLabel.text = "\(row.city_name) | \(row.city_english_name)"
         
         cityExplainLabel.text = row.city_explain
     }

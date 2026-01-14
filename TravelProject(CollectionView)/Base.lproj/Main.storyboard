@@ -74,10 +74,10 @@
             </objects>
             <point key="canvasLocation" x="936.64122137404581" y="100.70422535211269"/>
         </scene>
-        <!--View Controller-->
+        <!--Domestic Detail View Controller-->
         <scene sceneID="H02-pu-5Q9">
             <objects>
-                <viewController id="ZLn-ZI-om8" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DomesticDetailViewController" id="ZLn-ZI-om8" customClass="DomesticDetailViewController" customModule="TravelProject_CollectionView_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mN5-oM-hT9">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,15 +126,21 @@
                             <constraint firstItem="JK7-n7-tnh" firstAttribute="centerX" secondItem="mN5-oM-hT9" secondAttribute="centerX" id="ycr-08-eoh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityExplainLabel" destination="YgD-T3-SJ8" id="anx-0K-vAz"/>
+                        <outlet property="cityImageView" destination="hM2-4P-7wf" id="ZLT-UN-yZV"/>
+                        <outlet property="cityNameLabel" destination="JK7-n7-tnh" id="DTB-Gl-Pua"/>
+                        <outlet property="otherCityButton" destination="y5G-QT-BsM" id="rqP-0a-jbg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ao-Aa-GdU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1745.8015267175572" y="100.70422535211269"/>
         </scene>
-        <!--View Controller-->
+        <!--International Detail View Controller-->
         <scene sceneID="EtJ-Ey-DHc">
             <objects>
-                <viewController id="Cey-zT-9s9" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InternationalDetailViewController" id="Cey-zT-9s9" customClass="InternationalDetailViewController" customModule="TravelProject_CollectionView_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="chE-xi-ul3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,6 +159,9 @@
                             <constraint firstItem="cKB-Me-ZWo" firstAttribute="centerX" secondItem="chE-xi-ul3" secondAttribute="centerX" id="WWp-1K-XfQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityNameLabel" destination="cKB-Me-ZWo" id="pkL-FT-eTP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r5g-NH-aXY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

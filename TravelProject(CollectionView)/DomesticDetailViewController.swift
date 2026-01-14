@@ -12,6 +12,7 @@ class DomesticDetailViewController: UIViewController {
     @IBOutlet var cityImageView: UIImageView!
     @IBOutlet var cityNameLabel: UILabel!
     @IBOutlet var cityExplainLabel: UILabel!
+    @IBOutlet var otherCityButton: UIButton!
     
     var itemData: City?
     
@@ -19,13 +20,17 @@ class DomesticDetailViewController: UIViewController {
         super.viewDidLoad()
 
         configUI()
+        
+        otherCityButton.addTarget(self, action: #selector(otherCityButtonTapped), for: .touchUpInside)
     }
     
-    @IBAction func otherCityButtonTapped(_ sender: UIButton) {
+    @objc private func otherCityButtonTapped() {
         navigationController?.popViewController(animated: true)
     }
     
     private func configUI() {
+        navigationItem.title = "관광지 화면"
+        
         let url = itemData?.city_image
         cityImageView.clipsToBounds = true
         cityImageView.layer.cornerRadius = cityImageView.frame.height / 2
@@ -33,6 +38,6 @@ class DomesticDetailViewController: UIViewController {
         
         cityNameLabel.text = "\(itemData?.city_name ?? "") | \(itemData?.city_english_name ?? "")"
         
-        cityExplainLabel.text = itemData?.city_explain ?? ""
+        cityExplainLabel.text = itemData?.city_explain
     }
 }
