@@ -32,8 +32,9 @@ class DomesticDetailViewController: UIViewController {
         navigationItem.title = "관광지 화면"
         
         let url = itemData?.city_image
+        cityImageView.contentMode = .scaleAspectFill
         cityImageView.clipsToBounds = true
-        cityImageView.layer.cornerRadius = cityImageView.frame.height / 2
+        cityImageView.layer.cornerRadius = 15
         cityImageView.kf.setImage(with: URL(string: url ?? ""))
         
         cityNameLabel.text = "\(itemData?.city_name ?? "") | \(itemData?.city_english_name ?? "")"

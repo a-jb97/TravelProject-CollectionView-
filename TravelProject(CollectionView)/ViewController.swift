@@ -45,6 +45,23 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return item
     }
     
+    // MARK: 아이템 선택 시 DomesticDetailVC로 값 전달 후 Push
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let domesticVC = storyboard?.instantiateViewController(withIdentifier: "DomesticDetailViewController") as! DomesticDetailViewController
+        
+        let internationalVC = storyboard?.instantiateViewController(withIdentifier: "InternationalDetailViewController") as! InternationalDetailViewController
+        
+        if citys[indexPath.row].domestic_travel {
+            domesticVC.itemData = citys[indexPath.row]
+            
+            navigationController?.pushViewController(domesticVC, animated: true)
+        } else {
+            internationalVC.itemData = citys[indexPath.row]
+            
+            navigationController?.pushViewController(internationalVC, animated: true)
+        }
+    }
+    
     @IBAction func filterSCValueChanged(_ sender: UISegmentedControl) {
         
     }
