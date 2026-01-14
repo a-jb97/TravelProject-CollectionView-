@@ -10,27 +10,19 @@ import Kingfisher
 
 class TravelCollectionViewCell: UICollectionViewCell {
     static let identifier = "TravelCollectionViewCell"
-    
-    var itemData: City?
 
     @IBOutlet var cityImageView: UIImageView!
     @IBOutlet var cityName: UILabel!
     @IBOutlet var cityExplainLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        configUI()
-    }
-    
-    private func configUI() {
-        let url = itemData?.city_image
+    private func configUI(row: City) {
+        let url = row.city_image
         cityImageView.clipsToBounds = true
         cityImageView.layer.cornerRadius = cityImageView.frame.height / 2
-        cityImageView.kf.setImage(with: URL(string: url ?? ""))
+        cityImageView.kf.setImage(with: URL(string: url))
         
-        cityName.text = "\(itemData?.city_name ?? "") | \(itemData?.city_english_name ?? "")"
+        cityName.text = "\(row.city_name) | \(row.city_english_name)"
         
-        cityExplainLabel.text = itemData?.city_explain ?? ""
+        cityExplainLabel.text = row.city_explain
     }
 }
