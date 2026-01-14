@@ -28,9 +28,6 @@
                                     <segment title="국내"/>
                                     <segment title="해외"/>
                                 </segments>
-                                <connections>
-                                    <action selector="filterSCValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="lne-im-dqd"/>
-                                </connections>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XmY-Wp-S7e">
                                 <rect key="frame" x="16" y="236" width="361" height="616"/>
@@ -67,6 +64,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="인기 도시" id="k60-KC-Ks8"/>
                     <connections>
+                        <outlet property="filterSegmentedControl" destination="UhX-8c-JCz" id="PUb-tQ-OK1"/>
                         <outlet property="travelCollectionView" destination="XmY-Wp-S7e" id="zsK-Fk-hZb"/>
                     </connections>
                 </viewController>

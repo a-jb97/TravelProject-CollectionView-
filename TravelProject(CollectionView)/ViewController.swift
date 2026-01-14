@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    @IBOutlet var filterSegmentedControl: UISegmentedControl!
     @IBOutlet var travelCollectionView: UICollectionView!
     
     var citys = CityInfo().city
@@ -15,6 +16,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        filterSegmentedControl.addTarget(self, action: #selector(filterSegmentedControlTapped), for: .valueChanged)
         
         travelCollectionView.delegate = self
         travelCollectionView.dataSource = self
@@ -65,7 +68,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
     
-    @IBAction func filterSCValueChanged(_ sender: UISegmentedControl) {
+    // MARK: Enum을 이용하여 SegmentedControl로 필터링
+    @objc private func filterSegmentedControlTapped(_ sender: UISegmentedControl) {
+        let selectedSeg = sender.selectedSegmentIndex
+        let selectedOption = Filter(rawValue: sender.titleForSegment(at: selectedSeg)!)!
         
+        switch selectedOption {
+        case .all:
+            citys = CityInfo().city
+            travelCollectionView.reloadData()
+        case .domestic:
+            citys = CityInfo().domesticCities
+            travelCollectionView.reloadData()
+        case .international:
+            citys = CityInfo().internationalCities
+            travelCollectionView.reloadData()
+        }
     }
 }

@@ -8,10 +8,10 @@ struct City {
     let domestic_travel: Bool
 }
 
-enum Filter {
-case all
-case domestic
-case international
+enum Filter: String, CaseIterable {
+case all = "모두"
+case domestic = "국내"
+case international = "해외"
 }
 
 struct CityInfo {
