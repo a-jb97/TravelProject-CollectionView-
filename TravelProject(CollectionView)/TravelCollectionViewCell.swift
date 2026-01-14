@@ -15,11 +15,12 @@ class TravelCollectionViewCell: UICollectionViewCell {
     @IBOutlet var cityNameLabel: UILabel!
     @IBOutlet var cityExplainLabel: UILabel!
     
-    private func configUI(row: City) {
+    func configUI(row: City) {
         let url = row.city_image
         cityImageView.clipsToBounds = true
         cityImageView.layer.cornerRadius = cityImageView.frame.height / 2
         cityImageView.kf.setImage(with: URL(string: url))
+        cityImageView.contentMode = .scaleAspectFill
         
         cityNameLabel.text = "\(row.city_name) | \(row.city_english_name)"
         
