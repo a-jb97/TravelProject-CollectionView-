@@ -6,24 +6,33 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DomesticDetailViewController: UIViewController {
-
+    @IBOutlet var cityImageView: UIImageView!
+    @IBOutlet var cityNameLabel: UILabel!
+    @IBOutlet var cityExplainLabel: UILabel!
+    
+    var itemData: City?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        configUI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func otherCityButtonTapped(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
     }
-    */
-
+    
+    private func configUI() {
+        let url = itemData?.city_image
+        cityImageView.clipsToBounds = true
+        cityImageView.layer.cornerRadius = cityImageView.frame.height / 2
+        cityImageView.kf.setImage(with: URL(string: url ?? ""))
+        
+        cityNameLabel.text = "\(itemData?.city_name ?? "") | \(itemData?.city_english_name ?? "")"
+        
+        cityExplainLabel.text = itemData?.city_explain ?? ""
+    }
 }
