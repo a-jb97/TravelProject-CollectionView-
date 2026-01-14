@@ -8,12 +8,6 @@ struct City {
     let domestic_travel: Bool
 }
 
-enum Filter: String, CaseIterable {
-case all = "모두"
-case domestic = "국내"
-case international = "해외"
-}
-
 struct CityInfo {
     let city: [City] = [
         // MARK: - 국내 도시 (Domestic - 12개)

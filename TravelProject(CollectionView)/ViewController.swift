@@ -11,6 +11,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet var filterSegmentedControl: UISegmentedControl!
     @IBOutlet var travelCollectionView: UICollectionView!
     
+    enum Filter: String, CaseIterable {
+    case all = "모두"
+    case domestic = "국내"
+    case international = "해외"
+    }
+    
     var citys = CityInfo().city
     var filter: Filter = .all
     
