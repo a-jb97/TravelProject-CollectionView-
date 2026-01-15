@@ -46,7 +46,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     @objc private func rightBarButtonTapped() {
+        let vc = storyboard!.instantiateViewController(withIdentifier: NicknameChangeViewController.identifier)
         
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
