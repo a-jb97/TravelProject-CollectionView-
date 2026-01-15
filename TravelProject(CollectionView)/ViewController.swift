@@ -33,12 +33,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         switch UserDefaultsManager.segment {
         case Filter.all.rawValue:
             filterSegmentedControl.selectedSegmentIndex = 0
+            filteredCitys = cityInfo.city
         case Filter.domestic.rawValue:
             filterSegmentedControl.selectedSegmentIndex = 1
+            filteredCitys = cityInfo.domesticCities
         case Filter.international.rawValue:
             filterSegmentedControl.selectedSegmentIndex = 2
+            filteredCitys = cityInfo.internationalCities
         default:
             filterSegmentedControl.selectedSegmentIndex = 0
+            filteredCitys = cityInfo.city
         }
         filterSegmentedControl.addTarget(self, action: #selector(filterSegmentedControlTapped), for: .valueChanged)
         

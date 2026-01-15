@@ -16,7 +16,9 @@ class HotPlaceViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        navigationItem.title = "Hot 명소"
+        
         configCollectionView()
     }
     
