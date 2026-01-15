@@ -14,6 +14,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var citys = CityInfo().city
     var filter: Filter = .all
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // MARK: 닉네임 없으면 타이틀 '인기 도시', 있으면 'OOO님 환영합니다!'
+        navigationItem.title = (UserDefaultsManager.nickname != nil) ? "\(UserDefaultsManager.nickname!)님 환영합니다!" : "인기 도시"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -91,13 +98,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         switch selectedOption {
         case .all:
             citys = CityInfo().city
-            travelCollectionView.reloadData()
         case .domestic:
             citys = CityInfo().domesticCities
-            travelCollectionView.reloadData()
         case .international:
             citys = CityInfo().internationalCities
-            travelCollectionView.reloadData()
         }
+        
+        travelCollectionView.reloadData()
     }
 }
