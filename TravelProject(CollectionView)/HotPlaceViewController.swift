@@ -46,6 +46,7 @@ class HotPlaceViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
     
+    // MARK: collectionView 레이아웃
     private func configCollectionView() {
         hotplaceCollectionView.delegate = self
         hotplaceCollectionView.dataSource = self
