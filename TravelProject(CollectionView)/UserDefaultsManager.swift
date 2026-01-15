@@ -22,6 +22,6 @@ class UserDefaultsManager {
     @UserDefault(key: "nickname", value: nil)
     static var nickname: String?
     
-    @UserDefault(key: "segment", value: Filter.all)
-    static var segment: Filter
+    @UserDefault(key: "segment", value: Filter.all.rawValue)
+    static var segment: String
 }

@@ -27,9 +27,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "flame.fill"), style: .plain, target: self, action: #selector(leftBarButtonTapped))
         navigationItem.leftBarButtonItem?.tintColor = .systemOrange
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.fill"), style: .plain, target: self, action: #selector(rightBarButtonTapped))
         
+        // MARK: UserDefaultsManager.segment 값에 따른 필터 선택
+        switch UserDefaultsManager.segment {
+        case Filter.all.rawValue:
+            filterSegmentedControl.selectedSegmentIndex = 0
+        case Filter.domestic.rawValue:
+            filterSegmentedControl.selectedSegmentIndex = 1
+        case Filter.international.rawValue:
+            filterSegmentedControl.selectedSegmentIndex = 2
+        default:
+            filterSegmentedControl.selectedSegmentIndex = 0
+        }
         filterSegmentedControl.addTarget(self, action: #selector(filterSegmentedControlTapped), for: .valueChanged)
         
         travelCollectionView.delegate = self
@@ -98,10 +108,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         switch selectedOption {
         case .all:
+            UserDefaultsManager.segment = Filter.all.rawValue
             filteredCitys = cityInfo.city
         case .domestic:
+            UserDefaultsManager.segment = Filter.domestic.rawValue
             filteredCitys = cityInfo.domesticCities
         case .international:
+            UserDefaultsManager.segment = Filter.international.rawValue
             filteredCitys = cityInfo.internationalCities
         }
         
