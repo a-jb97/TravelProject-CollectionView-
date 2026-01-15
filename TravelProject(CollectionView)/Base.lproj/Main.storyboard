@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -183,8 +184,71 @@
             </objects>
             <point key="canvasLocation" x="136.64122137404578" y="101.40845070422536"/>
         </scene>
+        <!--프로필 수정-->
+        <scene sceneID="8X9-ud-ncZ">
+            <objects>
+                <viewController storyboardIdentifier="ChangeNicknameViewController" id="FXU-Xs-nI9" customClass="ChangeNicknameViewController" customModule="ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dP3-xn-xEv">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="변경할 닉네임을 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oQg-dr-kyU">
+                                <rect key="frame" x="16" y="146.33333333333334" width="361" height="51.666666666666657"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oQg-dr-kyU" secondAttribute="height" multiplier="7:1" id="nQk-sA-NiX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="nicknameTextFieldDidEndOnExit:" destination="FXU-Xs-nI9" eventType="editingDidEndOnExit" id="2BR-nA-ksZ"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용하실 닉네임을 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXa-qP-WIB">
+                                <rect key="frame" x="32" y="204" width="155.66666666666666" height="14.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용자 정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCS-3H-JmN">
+                                <rect key="frame" x="32" y="117.99999999999999" width="78" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jTL-fj-EdO"/>
+                        <color key="backgroundColor" red="0.94921875" green="0.94921875" blue="0.96875" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="ZCS-3H-JmN" firstAttribute="leading" secondItem="jTL-fj-EdO" secondAttribute="leading" constant="32" id="10m-OB-HVt"/>
+                            <constraint firstItem="oQg-dr-kyU" firstAttribute="top" secondItem="ZCS-3H-JmN" secondAttribute="bottom" constant="8" id="BGY-DC-rnk"/>
+                            <constraint firstItem="jTL-fj-EdO" firstAttribute="trailing" secondItem="oQg-dr-kyU" secondAttribute="trailing" constant="16" id="Dhw-B7-0et"/>
+                            <constraint firstItem="WXa-qP-WIB" firstAttribute="top" secondItem="oQg-dr-kyU" secondAttribute="bottom" constant="6" id="V4P-5d-U7K"/>
+                            <constraint firstItem="ZCS-3H-JmN" firstAttribute="top" secondItem="jTL-fj-EdO" secondAttribute="top" id="X3R-OB-chJ"/>
+                            <constraint firstItem="WXa-qP-WIB" firstAttribute="leading" secondItem="jTL-fj-EdO" secondAttribute="leading" constant="32" id="d3a-oN-oVZ"/>
+                            <constraint firstItem="oQg-dr-kyU" firstAttribute="leading" secondItem="jTL-fj-EdO" secondAttribute="leading" constant="16" id="liv-sP-hwR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="프로필 수정" id="yBb-pz-CP4">
+                        <barButtonItem key="rightBarButtonItem" title="완료" id="G9T-0s-Qqm">
+                            <color key="tintColor" name="AccentColor"/>
+                            <connections>
+                                <action selector="doneBarButtonTapped:" destination="FXU-Xs-nI9" id="m68-If-g0t"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nicknameTextField" destination="oQg-dr-kyU" id="sCy-d8-sRU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ykt-NG-TIs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3369" y="101"/>
+        </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

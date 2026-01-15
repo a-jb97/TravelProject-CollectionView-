@@ -11,17 +11,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet var filterSegmentedControl: UISegmentedControl!
     @IBOutlet var travelCollectionView: UICollectionView!
     
-    enum Filter: String, CaseIterable {
-    case all = "모두"
-    case domestic = "국내"
-    case international = "해외"
-    }
-    
     var citys = CityInfo().city
     var filter: Filter = .all
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "flame.fill"), style: .plain, target: self, action: #selector(leftBarButtonTapped))
+        navigationItem.leftBarButtonItem?.tintColor = .systemOrange
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.fill"), style: .plain, target: self, action: #selector(rightBarButtonTapped))
         
         filterSegmentedControl.addTarget(self, action: #selector(filterSegmentedControlTapped), for: .valueChanged)
         
@@ -40,6 +39,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         layout.minimumInteritemSpacing = 4
         
         travelCollectionView.collectionViewLayout = layout
+    }
+    
+    @objc private func leftBarButtonTapped() {
+        
+    }
+    
+    @objc private func rightBarButtonTapped() {
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
