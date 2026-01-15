@@ -60,7 +60,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     @objc private func leftBarButtonTapped() {
+        let vc = storyboard!.instantiateViewController(withIdentifier: HotPlaceViewController.identifier)
         
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func rightBarButtonTapped() {

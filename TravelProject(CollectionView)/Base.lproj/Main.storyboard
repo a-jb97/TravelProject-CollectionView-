@@ -48,6 +48,9 @@
                             <constraint firstItem="4qc-Sg-vcb" firstAttribute="leading" secondItem="M4w-XT-G2v" secondAttribute="leading" constant="8" id="r7U-ej-S53"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="hotplaceCollectionView" destination="4qc-Sg-vcb" id="xfl-lA-Jbp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0lQ-ZL-q64" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

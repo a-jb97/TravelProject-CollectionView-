@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,18 +17,18 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="LIQ-QF-SMD">
-                        <rect key="frame" x="28.000000000000004" y="20.666666666666668" width="44.333333333333343" height="38.666666666666657"/>
+                        <rect key="frame" x="8" y="20.666666666666668" width="84" height="38.666666666666657"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AqT-EL-ADK">
-                                <rect key="frame" x="0.0" y="0.0" width="44.333333333333336" height="20.333333333333332"/>
+                                <rect key="frame" x="0.0" y="0.0" width="84" height="20.333333333333332"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbe-7q-4GR">
-                                <rect key="frame" x="0.0" y="24.333333333333332" width="44.333333333333336" height="14.333333333333332"/>
+                                <rect key="frame" x="0.0" y="24.333333333333332" width="84" height="14.333333333333332"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -48,6 +47,8 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" red="0.8666992188" green="0.9252929688" blue="0.9921875" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="LIQ-QF-SMD" secondAttribute="trailing" constant="8" id="DcK-pn-fmP"/>
+                <constraint firstItem="LIQ-QF-SMD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="JJQ-cP-Rad"/>
                 <constraint firstItem="LIQ-QF-SMD" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="hGW-FD-sN9"/>
                 <constraint firstItem="LIQ-QF-SMD" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="nfH-D7-Kvd"/>
                 <constraint firstAttribute="trailing" secondItem="H9K-AX-zzs" secondAttribute="trailing" constant="4" id="s5X-qI-a0d"/>
@@ -55,47 +56,10 @@
             </constraints>
             <size key="customSize" width="100" height="80"/>
             <connections>
-                <outlet property="adKoreanName" destination="pIj-lL-hCZ" id="0d1-i4-QBA"/>
-                <outlet property="adMarkLabel" destination="gpc-Bw-4D8" id="qiM-Sk-DNR"/>
                 <outlet property="cityName" destination="nbe-7q-4GR" id="0y4-cS-Hek"/>
                 <outlet property="koreanNameLabel" destination="AqT-EL-ADK" id="BN6-Vq-H3B"/>
             </connections>
             <point key="canvasLocation" x="-96.18320610687023" y="111.26760563380282"/>
-        </collectionViewCell>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AdCollectionViewCell" id="gMR-hF-tRF" customClass="HotPlaceCollectionViewCell" customModule="TravelProject_CollectionView_" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RDU-Hf-ltf">
-                <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="r8y-I1-Mhr">
-                        <rect key="frame" x="32.333333333333329" y="21" width="35.333333333333329" height="38"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpc-Bw-4D8">
-                                <rect key="frame" x="0.0" y="0.0" width="35.333333333333336" height="17"/>
-                                <color key="backgroundColor" red="0.9243164062" green="0.5961914062" blue="0.21374513210000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIj-lL-hCZ">
-                                <rect key="frame" x="0.0" y="21" width="35.333333333333336" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                    </stackView>
-                </subviews>
-                <color key="backgroundColor" red="0.98828125" green="0.9453125" blue="0.7255859375" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                <constraints>
-                    <constraint firstItem="r8y-I1-Mhr" firstAttribute="centerY" secondItem="RDU-Hf-ltf" secondAttribute="centerY" id="DFO-o4-d9d"/>
-                    <constraint firstItem="r8y-I1-Mhr" firstAttribute="centerX" secondItem="RDU-Hf-ltf" secondAttribute="centerX" id="akH-Zr-AhH"/>
-                </constraints>
-            </collectionViewCellContentView>
-            <size key="customSize" width="100" height="80"/>
-            <point key="canvasLocation" x="119" y="111"/>
         </collectionViewCell>
     </objects>
     <resources>

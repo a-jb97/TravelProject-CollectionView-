@@ -8,19 +8,13 @@
 import UIKit
 
 class HotPlaceCollectionViewCell: UICollectionViewCell {
+    static let identifier = "HotPlaceCollectionViewCell"
+    
     @IBOutlet var koreanNameLabel: UILabel!
     @IBOutlet var cityName: UILabel!
     
-    @IBOutlet var adMarkLabel: UILabel!
-    @IBOutlet var adKoreanName: UILabel!
-    
     func configUI(row: TouristSpot) {
-        if !row.ad {
-            koreanNameLabel.text = row.koreanName
-            cityName.text = row.city
-        } else {
-            adMarkLabel.layer.cornerRadius = adMarkLabel.frame.height / 2
-            adKoreanName.text = row.koreanName
-        }
+        koreanNameLabel.text = row.koreanName
+        cityName.text = row.city
     }
 }
