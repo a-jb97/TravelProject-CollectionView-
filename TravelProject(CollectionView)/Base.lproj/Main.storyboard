@@ -187,7 +187,7 @@
         <!--프로필 수정-->
         <scene sceneID="8X9-ud-ncZ">
             <objects>
-                <viewController storyboardIdentifier="ChangeNicknameViewController" id="FXU-Xs-nI9" customClass="ChangeNicknameViewController" customModule="ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NicknameChangeViewController" id="FXU-Xs-nI9" customClass="NicknameChangeViewController" customModule="TravelProject_CollectionView_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dP3-xn-xEv">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,7 +200,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="nicknameTextFieldDidEndOnExit:" destination="FXU-Xs-nI9" eventType="editingDidEndOnExit" id="2BR-nA-ksZ"/>
+                                    <action selector="nicknameTextFieldDidEndOnExit:" destination="FXU-Xs-nI9" eventType="editingDidEndOnExit" id="4UR-7j-wmD"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용하실 닉네임을 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXa-qP-WIB">
@@ -237,7 +237,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="nicknameTextField" destination="oQg-dr-kyU" id="sCy-d8-sRU"/>
+                        <outlet property="nicknameTextField" destination="oQg-dr-kyU" id="MZM-bf-dbV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ykt-NG-TIs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
