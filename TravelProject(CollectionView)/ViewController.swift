@@ -11,7 +11,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet var filterSegmentedControl: UISegmentedControl!
     @IBOutlet var travelCollectionView: UICollectionView!
     
-    var citys = CityInfo().city
+    var cityInfo = CityInfo()
+    var filteredCitys: [City] = CityInfo().city
     var filter: Filter = .all
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,13 +60,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return citys.count
+        return filteredCitys.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = collectionView.dequeueReusableCell(withReuseIdentifier: TravelCollectionViewCell.identifier, for: indexPath) as! TravelCollectionViewCell
         
-        item.configUI(row: citys[indexPath.row])
+        item.configUI(row: filteredCitys[indexPath.row])
         
         return item
     }
@@ -76,14 +77,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         let internationalVC = storyboard?.instantiateViewController(withIdentifier: "InternationalDetailViewController") as! InternationalDetailViewController
         
-        if citys[indexPath.row].domestic_travel {
-            domesticVC.itemData = citys[indexPath.row]
+        if filteredCitys[indexPath.row].domestic_travel {
+            domesticVC.itemData = filteredCitys[indexPath.row]
             
             navigationController?.pushViewController(domesticVC, animated: true)
         } else {
             let navVC = UINavigationController(rootViewController: internationalVC)
             
-            internationalVC.itemData = citys[indexPath.row]
+            internationalVC.itemData = filteredCitys[indexPath.row]
             navVC.modalPresentationStyle = .fullScreen
             
             present(navVC, animated: true)
@@ -97,11 +98,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         switch selectedOption {
         case .all:
-            citys = CityInfo().city
+            filteredCitys = cityInfo.city
         case .domestic:
-            citys = CityInfo().domesticCities
+            filteredCitys = cityInfo.domesticCities
         case .international:
-            citys = CityInfo().internationalCities
+            filteredCitys = cityInfo.internationalCities
         }
         
         travelCollectionView.reloadData()
