@@ -16,5 +16,6 @@ class HotPlaceCollectionViewCell: UICollectionViewCell {
     func configUI(row: TouristSpot) {
         koreanNameLabel.text = row.koreanName
         cityName.text = row.city
+        self.layer.cornerRadius = 15
     }
 }

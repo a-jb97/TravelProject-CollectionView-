@@ -32,16 +32,12 @@ class HotPlaceViewController: UIViewController, UICollectionViewDelegate, UIColl
         if !spots[indexPath.row].ad {
             let hotPlaceCell = collectionView.dequeueReusableCell(withReuseIdentifier: HotPlaceCollectionViewCell.identifier, for: indexPath) as! HotPlaceCollectionViewCell
             
-            hotPlaceCell.layer.cornerRadius = 15
             hotPlaceCell.configUI(row: spots[indexPath.row])
             
             return hotPlaceCell
         } else {
             let adCell = collectionView.dequeueReusableCell(withReuseIdentifier: AdCollectionViewCell.identifier, for: indexPath) as! AdCollectionViewCell
             
-            adCell.layer.cornerRadius = 15
-            adCell.layer.borderWidth = 1
-            adCell.layer.borderColor = UIColor.orange.cgColor
             adCell.configUI(row: spots[indexPath.row])
             
             return adCell
