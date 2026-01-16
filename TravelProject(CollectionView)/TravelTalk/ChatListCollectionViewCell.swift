@@ -20,6 +20,7 @@ class ChatListCollectionViewCell: UICollectionViewCell {
         let user = mockUsers[row.participantIds[1]]
         
         profileImageView.kf.setImage(with: URL(string: user.profileImage))
+        profileImageView.contentMode = .scaleAspectFill
         profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
         
         userNameLabel.text = user.userName

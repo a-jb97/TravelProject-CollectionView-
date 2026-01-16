@@ -17,25 +17,25 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VAD-qd-s0d">
-                        <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                        <rect key="frame" x="8" y="0.0" width="65" height="65"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="VAD-qd-s0d" secondAttribute="height" multiplier="1:1" id="5ja-nR-guf"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCF-0f-2kZ">
-                        <rect key="frame" x="73" y="36" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="81" y="40" width="35.333333333333343" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8v-cb-Vw9">
-                        <rect key="frame" x="256.66666666666669" y="8" width="35.333333333333314" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="261" y="8" width="31" height="14.333333333333332"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kp4-BY-UvY">
-                        <rect key="frame" x="73" y="8" width="44.333333333333343" height="21"/>
+                        <rect key="frame" x="81" y="8" width="44.333333333333343" height="21"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -47,12 +47,14 @@
                 <constraint firstAttribute="bottom" secondItem="VAD-qd-s0d" secondAttribute="bottom" id="4cN-IY-RRd"/>
                 <constraint firstItem="b8v-cb-Vw9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="8Q5-GN-iZM"/>
                 <constraint firstAttribute="trailing" secondItem="b8v-cb-Vw9" secondAttribute="trailing" constant="8" id="BWQ-6D-I6E"/>
-                <constraint firstItem="VAD-qd-s0d" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ejb-pq-pbI"/>
+                <constraint firstItem="VAD-qd-s0d" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="Ejb-pq-pbI"/>
                 <constraint firstItem="VAD-qd-s0d" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="GUx-eY-9iw"/>
                 <constraint firstItem="kp4-BY-UvY" firstAttribute="leading" secondItem="VAD-qd-s0d" secondAttribute="trailing" constant="8" id="Gvi-2i-tht"/>
+                <constraint firstItem="b8v-cb-Vw9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kp4-BY-UvY" secondAttribute="trailing" constant="8" id="QcJ-Am-7Ev"/>
                 <constraint firstItem="hCF-0f-2kZ" firstAttribute="leading" secondItem="VAD-qd-s0d" secondAttribute="trailing" constant="8" id="Rji-bB-xLT"/>
                 <constraint firstItem="kp4-BY-UvY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="anV-r0-2GW"/>
                 <constraint firstAttribute="bottom" secondItem="hCF-0f-2kZ" secondAttribute="bottom" constant="8" id="qh1-FY-aN8"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hCF-0f-2kZ" secondAttribute="trailing" constant="80" id="t1q-mg-UD1"/>
             </constraints>
             <size key="customSize" width="300" height="65"/>
             <connections>

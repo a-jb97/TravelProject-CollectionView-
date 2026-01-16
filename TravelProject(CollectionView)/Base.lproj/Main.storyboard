@@ -243,6 +243,10 @@
                                 <rect key="frame" x="0.0" y="172" width="393" height="64"/>
                                 <color key="backgroundColor" red="0.9370117188" green="0.9370117188" blue="0.94140625" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
                                 <connections>
                                     <outlet property="delegate" destination="xPS-cr-yau" id="KO9-SA-2gN"/>
                                 </connections>
@@ -281,6 +285,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="TRAVEL TALK" id="qvQ-rh-cTh"/>
+                    <connections>
+                        <outlet property="chatListCollectionView" destination="sNW-2w-0rt" id="U3D-qU-xtT"/>
+                        <outlet property="userSearchBar" destination="b1E-kY-KmQ" id="swU-n3-scM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="08T-ct-efT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
