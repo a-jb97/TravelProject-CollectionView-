@@ -21,13 +21,19 @@ class ChatListViewController: UIViewController {
     
     // MARK: 유저 검색 로직
     private func searchLogic(text: String) {
-        for user in mockUsers {
-            if text.uppercased() == user.userName.uppercased() {
-                searchedChatRooms = mockChatRooms.filter {
-                    return $0.participantIds[1] == user.userId
-                }
-            } else if text == "" {
-                searchedChatRooms = mockChatRooms
+        let searchedText = text.uppercased()
+        
+        if searchedText.isEmpty {
+            searchedChatRooms = mockChatRooms
+        } else {
+            let matchedUserIds = mockUsers.filter {
+                $0.userName.uppercased().contains(searchedText)
+            }.map {
+                $0.userId
+            }
+            
+            searchedChatRooms = mockChatRooms.filter {
+                matchedUserIds.contains($0.participantIds[1])
             }
         }
         
@@ -35,6 +41,7 @@ class ChatListViewController: UIViewController {
     }
 }
 
+// MARK: CollectionView Extension
 extension ChatListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     private func configCollectionView() {
         chatListCollectionView.delegate = self
@@ -73,6 +80,7 @@ extension ChatListViewController: UICollectionViewDelegate, UICollectionViewData
 //    }
 }
 
+// MARK: SearchBar Extension
 extension ChatListViewController: UISearchBarDelegate {
     private func configSearchBar() {
         userSearchBar.delegate = self
