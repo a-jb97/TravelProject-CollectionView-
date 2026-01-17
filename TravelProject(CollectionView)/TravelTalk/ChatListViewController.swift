@@ -75,9 +75,13 @@ extension ChatListViewController: UICollectionViewDelegate, UICollectionViewData
         return item
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        <#code#>
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ChatRoomViewController") as! ChatRoomViewController
+        
+        vc.selectedChatRoom = searchedChatRooms[indexPath.row]
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 // MARK: SearchBar Extension

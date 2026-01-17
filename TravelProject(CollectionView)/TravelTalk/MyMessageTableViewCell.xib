@@ -17,29 +17,41 @@
                 <rect key="frame" x="0.0" y="0.0" width="300" height="82"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNv-GO-B7Q">
-                        <rect key="frame" x="264.66666666666669" y="65" width="35.333333333333314" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z4K-qP-ea8">
+                        <rect key="frame" x="240.66666666666666" y="49" width="51.333333333333343" height="33"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNv-GO-B7Q">
+                                <rect key="frame" x="8" y="8" width="35.333333333333336" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="qNv-GO-B7Q" secondAttribute="trailing" constant="8" id="FqF-oo-KeS"/>
+                            <constraint firstItem="qNv-GO-B7Q" firstAttribute="leading" secondItem="z4K-qP-ea8" secondAttribute="leading" constant="8" id="X5A-E5-NL3"/>
+                            <constraint firstItem="qNv-GO-B7Q" firstAttribute="top" secondItem="z4K-qP-ea8" secondAttribute="top" constant="8" id="lk4-Qq-EdI"/>
+                            <constraint firstAttribute="bottom" secondItem="qNv-GO-B7Q" secondAttribute="bottom" constant="8" id="tQQ-39-aye"/>
+                        </constraints>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsY-Ib-UQ8">
-                        <rect key="frame" x="225.66666666666666" y="67" width="30.999999999999972" height="15"/>
+                        <rect key="frame" x="201.66666666666666" y="67" width="31" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" systemColor="underPageBackgroundColor"/>
                 <constraints>
-                    <constraint firstItem="qNv-GO-B7Q" firstAttribute="leading" secondItem="nsY-Ib-UQ8" secondAttribute="trailing" constant="8" id="AQI-IC-Gbg"/>
-                    <constraint firstAttribute="bottom" secondItem="nsY-Ib-UQ8" secondAttribute="bottom" id="E1J-D2-uAZ"/>
-                    <constraint firstAttribute="trailing" secondItem="qNv-GO-B7Q" secondAttribute="trailing" id="era-uS-UjD"/>
-                    <constraint firstAttribute="bottom" secondItem="qNv-GO-B7Q" secondAttribute="bottom" id="oVt-tw-1WQ"/>
+                    <constraint firstAttribute="bottom" secondItem="z4K-qP-ea8" secondAttribute="bottom" id="LY8-3a-XWr"/>
+                    <constraint firstAttribute="bottom" secondItem="nsY-Ib-UQ8" secondAttribute="bottom" id="Rv1-3C-zsW"/>
+                    <constraint firstAttribute="trailing" secondItem="z4K-qP-ea8" secondAttribute="trailing" constant="8" id="WTI-2j-LX2"/>
+                    <constraint firstItem="z4K-qP-ea8" firstAttribute="leading" secondItem="nsY-Ib-UQ8" secondAttribute="trailing" constant="8" id="zrJ-cT-uAC"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="bubbleView" destination="z4K-qP-ea8" id="AwS-ZU-ziV"/>
                 <outlet property="myMessageLabel" destination="qNv-GO-B7Q" id="53e-6m-IS3"/>
                 <outlet property="timeLabel" destination="nsY-Ib-UQ8" id="alD-d1-B0O"/>
             </connections>
@@ -47,8 +59,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <systemColor name="underPageBackgroundColor">
-            <color red="0.70980392156862748" green="0.71764705882352942" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="secondarySystemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
