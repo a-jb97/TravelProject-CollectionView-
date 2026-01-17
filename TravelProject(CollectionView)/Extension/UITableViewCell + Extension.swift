@@ -9,7 +9,7 @@ import UIKit
 
 extension UITableViewCell {
     // MARK: DateFormat
-    func messageDateFormat(_ date: Date) -> String {
+    func timeDateFormat(_ date: Date) -> String {
         let format = DateFormatter()
         
         format.dateFormat = "HH:mm a"

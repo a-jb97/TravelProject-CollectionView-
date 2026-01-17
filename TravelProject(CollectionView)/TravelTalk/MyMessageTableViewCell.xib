@@ -39,6 +39,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="myMessageLabel" destination="qNv-GO-B7Q" id="53e-6m-IS3"/>
+                <outlet property="timeLabel" destination="nsY-Ib-UQ8" id="alD-d1-B0O"/>
+            </connections>
             <point key="canvasLocation" x="-82.44274809160305" y="114.08450704225352"/>
         </tableViewCell>
     </objects>

@@ -20,6 +20,6 @@ class FriendMessageTableViewCell: UITableViewCell {
         friendProfileImageView.kf.setImage(with: URL(string: user.profileImage))
         friendNameLabel.text = user.userName
         friendMessageLabel.text = row.content
-        timeLabel.text = messageDateFormat(row.timestamp)
+        timeLabel.text = timeDateFormat(row.timestamp)
     }
 }
