@@ -25,13 +25,13 @@ class ChatListCollectionViewCell: UICollectionViewCell {
         
         userNameLabel.text = user.userName
         contentLabel.text = row.messages.last?.content
-        timeStampLabel.text = setDateFormat(row.messages.last?.timestamp ?? Date())
+        timeStampLabel.text = chatRoomDateFormat(row.messages.last?.timestamp ?? Date())
     }
 }
 
 extension ChatListCollectionViewCell {
     // MARK: DateFormat
-    private func setDateFormat(_ date: Date) -> String {
+    func chatRoomDateFormat(_ date: Date) -> String {
         let format = DateFormatter()
         
         format.dateFormat = "yy.MM.dd"
