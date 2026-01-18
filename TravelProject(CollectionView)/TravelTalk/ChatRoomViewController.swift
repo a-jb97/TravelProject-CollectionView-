@@ -10,6 +10,7 @@ import UIKit
 class ChatRoomViewController: UIViewController {
     @IBOutlet var chatTableView: UITableView!
     @IBOutlet var chatTextView: UITextView!
+    @IBOutlet var messageSendButton: UIButton!
     
     var selectedChatRoom: ChatRoom = mockChatRooms[0]
     
@@ -19,6 +20,8 @@ class ChatRoomViewController: UIViewController {
         configTableView()
         
         chatTextView.layer.cornerRadius = 10
+        
+        messageSendButton.addTarget(self, action: #selector(messageSendButtonTapped), for: .touchUpInside)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -28,6 +31,18 @@ class ChatRoomViewController: UIViewController {
         let index = IndexPath(row: self.selectedChatRoom.messages.count - 1, section: 0)
         
         chatTableView.scrollToRow(at: index, at: .bottom, animated: false)
+    }
+    
+    @objc private func messageSendButtonTapped() {
+        selectedChatRoom.messages.append(Message(messageId: (selectedChatRoom.messages.last?.messageId ?? selectedChatRoom.chatRoomId * 100) + 1, senderId: 0, content: chatTextView.text, timestamp: Date()))
+        
+        let index = IndexPath(row: selectedChatRoom.messages.count - 1, section: 0)
+        
+        chatTableView.performBatchUpdates {
+            chatTableView.insertRows(at: [index], with: .none)
+        } completion: { _ in
+            self.chatTableView.scrollToRow(at: index, at: .bottom, animated: false)
+        }
     }
 }
 
