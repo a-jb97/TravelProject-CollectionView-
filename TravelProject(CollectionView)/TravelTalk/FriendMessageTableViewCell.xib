@@ -10,10 +10,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendMessageTableViewCell" rowHeight="81" id="KGk-i7-Jjw" customClass="FriendMessageTableViewCell" customModule="TravelProject_CollectionView_" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="81"/>
+            <rect key="frame" x="0.0" y="0.0" width="274" height="81"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="300" height="81"/>
+                <rect key="frame" x="0.0" y="0.0" width="274" height="81"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="soG-Wb-oSx">
@@ -33,10 +33,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Njc-38-a78">
-                        <rect key="frame" x="56" y="28" width="51.333333333333343" height="37"/>
+                        <rect key="frame" x="56" y="28" width="51.333333333333343" height="41"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyD-ix-c5R">
-                                <rect key="frame" x="8" y="8" width="35.333333333333336" height="21"/>
+                                <rect key="frame" x="8" y="8" width="35.333333333333336" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -51,7 +51,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8S-XV-djc">
-                        <rect key="frame" x="115.33333333333331" y="50.666666666666664" width="31" height="14.333333333333336"/>
+                        <rect key="frame" x="115.33333333333331" y="54.666666666666664" width="31" height="14.333333333333336"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -65,8 +65,8 @@
                     <constraint firstItem="vQ5-4n-qlh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Ppc-ae-m0P"/>
                     <constraint firstItem="soG-Wb-oSx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="ago-q7-G70"/>
                     <constraint firstItem="vQ5-4n-qlh" firstAttribute="leading" secondItem="soG-Wb-oSx" secondAttribute="trailing" constant="8" id="f4B-Kk-vbP"/>
-                    <constraint firstAttribute="bottom" secondItem="Njc-38-a78" secondAttribute="bottom" constant="16" id="hSd-qb-jGl"/>
-                    <constraint firstAttribute="bottom" secondItem="v8S-XV-djc" secondAttribute="bottom" constant="16" id="uxu-2g-B1D"/>
+                    <constraint firstAttribute="bottom" secondItem="Njc-38-a78" secondAttribute="bottom" constant="12" id="hSd-qb-jGl"/>
+                    <constraint firstAttribute="bottom" secondItem="v8S-XV-djc" secondAttribute="bottom" constant="12" id="uxu-2g-B1D"/>
                     <constraint firstItem="Njc-38-a78" firstAttribute="leading" secondItem="soG-Wb-oSx" secondAttribute="trailing" constant="8" id="y51-WE-Nm4"/>
                 </constraints>
             </tableViewCellContentView>
@@ -78,7 +78,7 @@
                 <outlet property="friendProfileImageView" destination="soG-Wb-oSx" id="HoS-Qe-ZLl"/>
                 <outlet property="timeLabel" destination="v8S-XV-djc" id="f6n-Jb-6mE"/>
             </connections>
-            <point key="canvasLocation" x="123.66412213740458" y="113.73239436619718"/>
+            <point key="canvasLocation" x="103.81679389312977" y="113.73239436619718"/>
         </tableViewCell>
     </objects>
 </document>

@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z4K-qP-ea8">
-                        <rect key="frame" x="240.66666666666666" y="49" width="51.333333333333343" height="33"/>
+                        <rect key="frame" x="240.66666666666666" y="37" width="51.333333333333343" height="33"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNv-GO-B7Q">
                                 <rect key="frame" x="8" y="8" width="35.333333333333336" height="17"/>
@@ -36,16 +36,18 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsY-Ib-UQ8">
-                        <rect key="frame" x="201.66666666666666" y="67" width="31" height="15"/>
+                        <rect key="frame" x="201.66666666666666" y="55" width="31" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="z4K-qP-ea8" secondAttribute="bottom" id="LY8-3a-XWr"/>
-                    <constraint firstAttribute="bottom" secondItem="nsY-Ib-UQ8" secondAttribute="bottom" id="Rv1-3C-zsW"/>
+                    <constraint firstItem="nsY-Ib-UQ8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="52" id="6Lg-VD-8Nm"/>
+                    <constraint firstAttribute="bottom" secondItem="z4K-qP-ea8" secondAttribute="bottom" constant="12" id="LY8-3a-XWr"/>
+                    <constraint firstAttribute="bottom" secondItem="nsY-Ib-UQ8" secondAttribute="bottom" constant="12" id="Rv1-3C-zsW"/>
                     <constraint firstAttribute="trailing" secondItem="z4K-qP-ea8" secondAttribute="trailing" constant="8" id="WTI-2j-LX2"/>
+                    <constraint firstItem="z4K-qP-ea8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="egS-ba-LAm"/>
                     <constraint firstItem="z4K-qP-ea8" firstAttribute="leading" secondItem="nsY-Ib-UQ8" secondAttribute="trailing" constant="8" id="zrJ-cT-uAC"/>
                 </constraints>
             </tableViewCellContentView>

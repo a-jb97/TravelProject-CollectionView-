@@ -13,6 +13,7 @@ extension UITableViewCell {
         let format = DateFormatter()
         
         format.dateFormat = "HH:mm a"
+        format.locale = Locale(identifier: "ko_KR")
         
         let result = format.string(from: date)
         

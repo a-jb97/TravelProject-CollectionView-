@@ -17,6 +17,17 @@ class ChatRoomViewController: UIViewController {
         super.viewDidLoad()
 
         configTableView()
+        
+        chatTextView.layer.cornerRadius = 10
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // MARK: 테이블뷰 스크롤 가장 하단으로 내린 상태로 표시
+        let index = IndexPath(row: self.selectedChatRoom.messages.count - 1, section: 0)
+        
+        chatTableView.scrollToRow(at: index, at: .bottom, animated: false)
     }
 }
 
@@ -25,6 +36,8 @@ extension ChatRoomViewController: UITableViewDelegate, UITableViewDataSource {
         chatTableView.delegate = self
         chatTableView.dataSource = self
         chatTableView.rowHeight = UITableView.automaticDimension
+        
+        navigationItem.title = mockUsers[selectedChatRoom.participantIds[1]].userName
         
         let friendMessageXib = UINib(nibName: FriendMessageTableViewCell.identifier, bundle: nil)
         let myMessageXib = UINib(nibName: MyMessageTableViewCell.identifier, bundle: nil)
@@ -38,17 +51,18 @@ extension ChatRoomViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let friendCell = tableView.dequeueReusableCell(withIdentifier: FriendMessageTableViewCell.identifier) as! FriendMessageTableViewCell
-        let myCell = tableView.dequeueReusableCell(withIdentifier: MyMessageTableViewCell.identifier) as! MyMessageTableViewCell
-        
-        if selectedChatRoom.messages[indexPath.row].senderId == 1 {
-            friendCell.configUI(id: selectedChatRoom.participantIds[1], row: selectedChatRoom.messages[indexPath.row])
+        if selectedChatRoom.messages[indexPath.row].senderId == 0 {
+            let myCell = tableView.dequeueReusableCell(withIdentifier: MyMessageTableViewCell.identifier, for: indexPath) as! MyMessageTableViewCell
             
-            return friendCell
-        } else {
             myCell.configUI(row: selectedChatRoom.messages[indexPath.row])
             
             return myCell
+        } else {
+            let friendCell = tableView.dequeueReusableCell(withIdentifier: FriendMessageTableViewCell.identifier, for: indexPath) as! FriendMessageTableViewCell
+            
+            friendCell.configUI(id: selectedChatRoom.participantIds[1], row: selectedChatRoom.messages[indexPath.row])
+            
+            return friendCell
         }
     }
 }
