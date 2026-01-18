@@ -22,6 +22,10 @@ class ChatRoomViewController: UIViewController {
         chatTextView.layer.cornerRadius = 10
         
         messageSendButton.addTarget(self, action: #selector(messageSendButtonTapped), for: .touchUpInside)
+        
+        // MARK: 키보드가 올라오면 chatTextView도 키보드 높이만큼 올라가기
+        chatTextView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([chatTextView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor)])
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -33,8 +37,12 @@ class ChatRoomViewController: UIViewController {
         chatTableView.scrollToRow(at: index, at: .bottom, animated: false)
     }
     
+    // MARK: 메시지 전송
     @objc private func messageSendButtonTapped() {
-        selectedChatRoom.messages.append(Message(messageId: (selectedChatRoom.messages.last?.messageId ?? selectedChatRoom.chatRoomId * 100) + 1, senderId: 0, content: chatTextView.text, timestamp: Date()))
+        let newMessageData = Message(messageId: (selectedChatRoom.messages.last?.messageId ?? selectedChatRoom.chatRoomId * 100) + 1, senderId: 0, content: chatTextView.text, timestamp: Date())
+        
+        selectedChatRoom.messages.append(newMessageData)
+        mockChatRooms[selectedChatRoom.chatRoomId - 1].messages.append(newMessageData)
         
         let index = IndexPath(row: selectedChatRoom.messages.count - 1, section: 0)
         

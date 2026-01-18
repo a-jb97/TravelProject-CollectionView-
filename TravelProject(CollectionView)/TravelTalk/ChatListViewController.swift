@@ -13,6 +13,13 @@ class ChatListViewController: UIViewController {
     
     var searchedChatRooms = mockChatRooms
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // MARK: 뷰가 다시 표시될때마다 데이터 갱신
+        searchedChatRooms = mockChatRooms
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

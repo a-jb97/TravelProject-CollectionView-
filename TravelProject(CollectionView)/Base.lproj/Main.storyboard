@@ -251,7 +251,7 @@
                                     <outlet property="delegate" destination="xPS-cr-yau" id="KO9-SA-2gN"/>
                                 </connections>
                             </searchBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sNW-2w-0rt">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sNW-2w-0rt">
                                 <rect key="frame" x="0.0" y="236" width="393" height="616"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eVu-eF-TzS">
@@ -302,11 +302,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fhl-Ah-Q3Z">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fhl-Ah-Q3Z">
                                 <rect key="frame" x="0.0" y="118" width="393" height="590"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="메세지를 입력하세요" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="amv-9n-hDs">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="메세지를 입력하세요" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="amv-9n-hDs">
                                 <rect key="frame" x="16" y="708" width="361" height="60"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <constraints>
@@ -316,7 +316,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWS-6r-FxW">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWS-6r-FxW">
                                 <rect key="frame" x="327.33333333333331" y="721" width="49.666666666666686" height="34.333333333333371"/>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -327,14 +327,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="GWS-6r-FxW" firstAttribute="centerY" secondItem="amv-9n-hDs" secondAttribute="centerY" id="9K0-r9-v4G"/>
-                            <constraint firstItem="amv-9n-hDs" firstAttribute="top" secondItem="fhl-Ah-Q3Z" secondAttribute="bottom" id="IeL-cP-xf8"/>
                             <constraint firstItem="amv-9n-hDs" firstAttribute="leading" secondItem="VnI-xy-rqA" secondAttribute="leading" constant="16" id="L6D-M9-NEA"/>
                             <constraint firstItem="fhl-Ah-Q3Z" firstAttribute="top" secondItem="VnI-xy-rqA" secondAttribute="top" id="T21-dA-rvl"/>
                             <constraint firstItem="fhl-Ah-Q3Z" firstAttribute="trailing" secondItem="VnI-xy-rqA" secondAttribute="trailing" id="YEG-AU-gjd"/>
                             <constraint firstItem="amv-9n-hDs" firstAttribute="trailing" secondItem="GWS-6r-FxW" secondAttribute="trailing" id="doh-vt-sHl"/>
                             <constraint firstItem="fhl-Ah-Q3Z" firstAttribute="leading" secondItem="VnI-xy-rqA" secondAttribute="leading" id="hyZ-M9-2m9"/>
+                            <constraint firstItem="amv-9n-hDs" firstAttribute="top" secondItem="fhl-Ah-Q3Z" secondAttribute="bottom" id="kTM-ga-e0G"/>
                             <constraint firstItem="VnI-xy-rqA" firstAttribute="trailing" secondItem="amv-9n-hDs" secondAttribute="trailing" constant="16" id="mVF-6e-L08"/>
-                            <constraint firstItem="VnI-xy-rqA" firstAttribute="bottom" secondItem="amv-9n-hDs" secondAttribute="bottom" constant="16" id="zBS-IS-m2E"/>
                         </constraints>
                     </view>
                     <connections>

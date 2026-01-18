@@ -52,7 +52,7 @@ let mockUsers: [User] = [
 ]
 
 // MARK: - ChatRoom Dummy Data (15개, personal only)
-let mockChatRooms: [ChatRoom] = [
+var mockChatRooms: [ChatRoom] = [
     
     // MARK: 1. Hue - 보통 메시지 (8개)
     ChatRoom(
