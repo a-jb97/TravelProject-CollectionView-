@@ -23,11 +23,14 @@ class FriendMessageTableViewCell: UITableViewCell {
         friendProfileImageView.contentMode = .scaleAspectFill
         friendProfileImageView.layer.cornerRadius = friendProfileImageView.frame.height / 2
         friendProfileImageView.kf.setImage(with: URL(string: user.profileImage))
+        
         bubbleView.layer.cornerRadius = 10
         bubbleView.layer.borderWidth = 1
         bubbleView.layer.borderColor = UIColor.lightGray.cgColor
+        
         friendNameLabel.text = user.userName
         friendMessageLabel.text = row.content
+        
         timeLabel.text = timeDateFormat(row.timestamp)
     }
 }

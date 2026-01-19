@@ -9,6 +9,7 @@ import UIKit
 import MapKit
 
 extension MKMapView {
+    // MARK: 장소 선택
     func selectLocation(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
         let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
@@ -17,6 +18,7 @@ extension MKMapView {
         self.setRegion(region, animated: true)
     }
     
+    // MARK: 선택한 장소 핀 꽂기
     func setAnnotation(latitude: CLLocationDegrees, longitude: CLLocationDegrees, title: String) {
         let annotation = MKPointAnnotation()
         let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)

@@ -16,7 +16,9 @@ class AdCollectionViewCell: UICollectionViewCell {
     func configUI(row: TouristSpot) {
         adMarkLabel.clipsToBounds = true
         adMarkLabel.layer.cornerRadius = adMarkLabel.frame.height / 2
+        
         adKoreanNameLabel.text = row.koreanName
+        
         self.layer.cornerRadius = 15
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.orange.cgColor

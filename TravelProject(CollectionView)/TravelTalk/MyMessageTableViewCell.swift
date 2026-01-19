@@ -18,7 +18,9 @@ class MyMessageTableViewCell: UITableViewCell {
         bubbleView.layer.cornerRadius = 10
         bubbleView.layer.borderWidth = 1
         bubbleView.layer.borderColor = UIColor.lightGray.cgColor
+        
         timeLabel.text = timeDateFormat(row.timestamp)
+        
         myMessageLabel.text = row.content
     }
 }

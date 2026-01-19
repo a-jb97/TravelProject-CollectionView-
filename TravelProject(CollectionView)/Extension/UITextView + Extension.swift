@@ -8,6 +8,7 @@
 import UIKit
 
 extension UITextView {
+    // MARK: 행간 조절
     func setLineSpacing(_ text: String, spacing: CGFloat){
         let style = NSMutableParagraphStyle()
         style.lineSpacing = spacing

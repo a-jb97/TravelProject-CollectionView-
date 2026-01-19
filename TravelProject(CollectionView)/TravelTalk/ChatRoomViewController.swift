@@ -32,7 +32,8 @@ class ChatRoomViewController: UIViewController {
         super.viewDidAppear(animated)
         
         // MARK: 테이블뷰 스크롤 가장 하단으로 내린 상태로 표시
-        let index = IndexPath(row: self.selectedChatRoom.messages.count - 1, section: 0)
+        let messages = selectedChatRoom.messages
+        let index = IndexPath(row: messages.isEmpty ? 0 : messages.count - 1, section: 0)
         
         chatTableView.scrollToRow(at: index, at: .bottom, animated: false)
     }
@@ -44,7 +45,8 @@ class ChatRoomViewController: UIViewController {
         selectedChatRoom.messages.append(newMessageData)
         mockChatRooms[selectedChatRoom.chatRoomId - 1].messages.append(newMessageData)
         
-        let index = IndexPath(row: selectedChatRoom.messages.count - 1, section: 0)
+        let messages = selectedChatRoom.messages
+        let index = IndexPath(row: messages.isEmpty ? 0 : messages.count - 1, section: 0)
         
         chatTableView.performBatchUpdates {
             chatTableView.insertRows(at: [index], with: .none)
