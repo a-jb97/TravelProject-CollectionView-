@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MapKit
 
 class HotPlaceViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     static let identifier = "HotPlaceViewController"
@@ -52,6 +53,9 @@ class HotPlaceViewController: UIViewController, UICollectionViewDelegate, UIColl
             vc.title = spot.koreanName
             vc.infoTextView.text = "\(spot.englishName)\n\(spot.city)\n\(spot.address)\n\(spot.phoneNumber)\n\(spot.websiteURL)\n\(spot.latitude), \(spot.longitude)"
             vc.infoTextView.setLineSpacing(vc.infoTextView.text, spacing: 14.5)
+            
+            vc.hotPlaceMapView.selectLocation(latitude: spot.latitude, longitude: spot.longitude)
+            vc.hotPlaceMapView.setAnnotation(latitude: spot.latitude, longitude: spot.longitude, title: spot.koreanName)
             
             navigationController?.pushViewController(vc, animated: true)
         }
