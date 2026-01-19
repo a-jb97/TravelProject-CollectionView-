@@ -50,16 +50,8 @@ class HotPlaceViewController: UIViewController, UICollectionViewDelegate, UIColl
             let spot = spots[indexPath.row]
             
             vc.title = spot.koreanName
-            
             vc.infoTextView.text = "\(spot.englishName)\n\(spot.city)\n\(spot.address)\n\(spot.phoneNumber)\n\(spot.websiteURL)\n\(spot.latitude), \(spot.longitude)"
-            
-            let style = NSMutableParagraphStyle()
-            style.lineSpacing = 14.5
-            
-            let attributedString = NSMutableAttributedString(string: vc.infoTextView.text)
-            attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value: style, range: NSRange(location: 0, length: attributedString.length))
-            
-            vc.infoTextView.attributedText = attributedString
+            vc.infoTextView.setLineSpacing(vc.infoTextView.text, spacing: 14.5)
             
             navigationController?.pushViewController(vc, animated: true)
         }

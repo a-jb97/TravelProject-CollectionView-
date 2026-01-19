@@ -107,6 +107,8 @@ class HotPlaceDetailViewController: UIViewController {
         }
     }
     
+    
+    
     static private func setImageView(imageName: String) -> UIImageView {
         let imageView = UIImageView()
         

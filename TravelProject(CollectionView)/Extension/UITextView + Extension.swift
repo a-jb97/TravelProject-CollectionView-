@@ -5,4 +5,16 @@
 //  Created by 전민돌 on 1/20/26.
 //
 
-import Foundation
+import UIKit
+
+extension UITextView {
+    func setLineSpacing(_ text: String, spacing: CGFloat){
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = spacing
+        
+        let attributedString = NSMutableAttributedString(string: text)
+        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value: style, range: NSRange(location: 0, length: attributedString.length))
+        
+        self.attributedText = attributedString
+    }
+}
