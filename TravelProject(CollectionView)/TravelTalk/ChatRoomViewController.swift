@@ -74,6 +74,7 @@ extension ChatRoomViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // MARK: 상대와 나의 메시지를 구분하여 각자 다른 셀 표시
         if selectedChatRoom.messages[indexPath.row].senderId == 0 {
             let myCell = tableView.dequeueReusableCell(withIdentifier: MyMessageTableViewCell.identifier, for: indexPath) as! MyMessageTableViewCell
             

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9E64228B2F177E4100D0CC79 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9E64228A2F177E4100D0CC79 /* Kingfisher */; };
+		9EADFDE02F1E214400A6B6AC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9EADFDDF2F1E214400A6B6AC /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E64228B2F177E4100D0CC79 /* Kingfisher in Frameworks */,
+				9EADFDE02F1E214400A6B6AC /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +86,7 @@
 			name = "TravelProject(CollectionView)";
 			packageProductDependencies = (
 				9E64228A2F177E4100D0CC79 /* Kingfisher */,
+				9EADFDDF2F1E214400A6B6AC /* SnapKit */,
 			);
 			productName = "TravelProject(CollectionView)";
 			productReference = 9E6422712F177E1E00D0CC79 /* TravelProject(CollectionView).app */;
@@ -115,6 +118,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				9E6422892F177E4100D0CC79 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				9EADFDDE2F1E214400A6B6AC /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9E6422722F177E1E00D0CC79 /* Products */;
@@ -374,6 +378,14 @@
 				minimumVersion = 8.6.2;
 			};
 		};
+		9EADFDDE2F1E214400A6B6AC /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -381,6 +393,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9E6422892F177E4100D0CC79 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		9EADFDDF2F1E214400A6B6AC /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9EADFDDE2F1E214400A6B6AC /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

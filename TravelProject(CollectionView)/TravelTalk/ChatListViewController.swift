@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ChatListViewController: UIViewController {
     @IBOutlet var userSearchBar: UISearchBar!
@@ -24,6 +25,7 @@ class ChatListViewController: UIViewController {
         super.viewDidLoad()
         
         configCollectionView()
+        configSearchBar()
     }
     
     // MARK: 유저 검색 로직
@@ -78,6 +80,19 @@ extension ChatListViewController: UICollectionViewDelegate, UICollectionViewData
         let item = collectionView.dequeueReusableCell(withReuseIdentifier: ChatListCollectionViewCell.identifier, for: indexPath) as! ChatListCollectionViewCell
         
         item.configUI(row: searchedChatRooms[indexPath.row])
+        
+        // MARK: 콜백 함수로 셀에 값 전달
+        item.buttonTap = { [weak self] in
+            let user = mockUsers.first {
+                $0.userId == self?.searchedChatRooms[indexPath.row].participantIds[1]
+            }
+            let vc = FriendProfileViewController()
+            
+            vc.profileImageView.kf.setImage(with: URL(string: user?.profileImage ?? ""))
+            vc.friendNameLabel.text = user?.userName ?? "알 수 없는 사용자"
+            
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
         
         return item
     }
